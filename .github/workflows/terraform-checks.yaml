@@ -19,7 +19,7 @@ jobs:
       uses: hashicorp/setup-terraform@v2
     
     - name: Terraform Init
-      run: terraform init
+      run: terraform init --backend=false #Terraform init tries to gain access to the state, but the backend false ignores that
     
     - name: Terraform Validate
       run: terraform validate
